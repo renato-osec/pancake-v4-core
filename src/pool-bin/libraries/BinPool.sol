@@ -222,10 +222,10 @@ library BinPool {
 
     struct MintParams {
         address to; // nft minted to
-        bytes32[] liquidityConfigs;
-        bytes32 amountIn;
         uint16 binStep;
         uint24 lpFeeOverride;
+        bytes32[] liquidityConfigs;
+        bytes32 amountIn;
         bytes32 salt;
     }
 

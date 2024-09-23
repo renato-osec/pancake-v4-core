@@ -90,10 +90,10 @@ library CLPool {
         // the lower and upper tick of the position
         int24 tickLower;
         int24 tickUpper;
+        int24 tickSpacing;
         // any change in liquidity
         int128 liquidityDelta;
         // the spacing between ticks
-        int24 tickSpacing;
         // used to distinguish positions of the same owner, at the same tick range
         bytes32 salt;
     }

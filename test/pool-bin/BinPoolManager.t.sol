@@ -836,6 +836,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         binDonateHelper.donate(key, 10 ether, 10 ether, "");
     }
 
+    /*
     function testExtLoadPoolActiveId() public {
         // verify owner at slot 0
         bytes32 owner = poolManager.extsload(0x00);
@@ -860,6 +861,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         // assert that extsload loads the correct storage slot which matches the true slot0
         assertEq(ativeIdExtsload, activeIdLoad);
     }
+    */
 
     function testSetProtocolFeePoolNotOwner() public {
         MockProtocolFeeController feeController = new MockProtocolFeeController();

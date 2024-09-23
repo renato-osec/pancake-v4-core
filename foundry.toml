@@ -5,6 +5,7 @@ solc_version = '0.8.26'
 optimizer_runs = 25_666
 via_ir = true
 ffi = true
+#extra_output_files = ["irOptimized"]
 fs_permissions = [
     { access = "read-write", path = ".forge-snapshots/" },
     { access = "read", path = "./foundry-out" },
