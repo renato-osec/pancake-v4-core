@@ -192,9 +192,9 @@ library CLPool {
     struct SwapParams {
         int24 tickSpacing;
         bool zeroForOne;
-        int256 amountSpecified;
         uint160 sqrtPriceLimitX96;
         uint24 lpFeeOverride;
+        int256 amountSpecified;
     }
 
     function swap(State storage self, SwapParams memory params)
@@ -381,11 +381,11 @@ library CLPool {
     struct UpdatePositionCache {
         bool flippedLower;
         bool flippedUpper;
+        uint128 maxLiquidityPerTick;
         uint256 feeGrowthInside0X128;
         uint256 feeGrowthInside1X128;
         uint256 feesOwed0;
         uint256 feesOwed1;
-        uint128 maxLiquidityPerTick;
     }
 
     function _updatePosition(State storage self, ModifyLiquidityParams memory params, int24 tick)
