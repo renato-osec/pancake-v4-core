@@ -49,7 +49,7 @@ abstract contract Pausable {
      * @dev Returns true if the contract is paused, and false otherwise.
      */
     function paused() public view virtual returns (bool res) {
-        assembly("memory-safe") {
+        assembly ("memory-safe") {
             res := sload(_paused.slot)
         }
     }
