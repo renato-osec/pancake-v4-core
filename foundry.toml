@@ -6,6 +6,7 @@ optimizer_runs = 25_666
 via_ir = true
 ffi = true
 #extra_output_files = ["irOptimized"]
+gas_reports = ["BinPoolManager"]
 fs_permissions = [
     { access = "read-write", path = ".forge-snapshots/" },
     { access = "read", path = "./foundry-out" },

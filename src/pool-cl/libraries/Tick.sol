@@ -152,7 +152,10 @@ library Tick {
 
         if (liquidityGrossAfter > maxLiquidity) revert TickLiquidityOverflow(tick);
 
-        flipped = (liquidityGrossAfter == 0) != (liquidityGrossBefore == 0);
+        //equivalent to flipped = (liquidityGrossAfter == 0) != (liquidityGrossBefore == 0);
+        assembly ("memory-safe") {
+            flipped := xor(iszero(liquidityGrossBefore), iszero(liquidityGrossAfter))
+        }
 
         if (liquidityGrossBefore == 0) {
             // by convention, we assume that all growth before a tick was initialized happened _below_ the tick

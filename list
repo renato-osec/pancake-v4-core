@@ -1,0 +1,2 @@
+src/pool-cl/CLPoolManager.sol
+   - short circuit  if (paused() && params.liquidityDelta > 0) revert PoolPaused();

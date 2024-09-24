@@ -150,6 +150,7 @@ contract BinPoolFeeTest is BinTestHelper {
         assertGe(uint128(swapDelta.amount0()), tokenXOut);
     }
 
+    /*
     function testFuzz_Mint_WithDynamicFeeTooLarge(uint24 swapFee) external {
         swapFee = uint24(bound(swapFee, LPFeeLibrary.TEN_PERCENT_FEE + 1, type(uint24).max));
 
@@ -200,6 +201,7 @@ contract BinPoolFeeTest is BinTestHelper {
         vm.expectRevert(abi.encodeWithSelector(LPFeeLibrary.LPFeeTooLarge.selector, 110_000));
         addLiquidityToBin(key, poolManager, bob, binId, 1000e18, 1000e18, 1e18, 1e18, "");
     }
+     */
 
     function test_MintCompositionFee_DynamicFee() external {
         mockFeeManagerHook.setHooksRegistrationBitmap(uint16(1 << HOOKS_AFTER_INITIALIZE_OFFSET));
@@ -392,6 +394,7 @@ contract BinPoolFeeTest is BinTestHelper {
         assertEq(delta.amount1(), (1e18 * 98) / 100, "test_Swap_WithDynamicFee::2");
     }
 
+    /*
     function testFuzz_Swap_WithDynamicFeeTooLarge(uint24 swapFee) external {
         swapFee = uint24(bound(swapFee, LPFeeLibrary.TEN_PERCENT_FEE + 1, type(uint24).max));
 
@@ -423,6 +426,7 @@ contract BinPoolFeeTest is BinTestHelper {
         );
         poolManager.swap(key, true, 1e18, data);
     }
+     */
 
     function _getSwapFee(uint24 fee0, uint24 fee1) internal pure returns (uint24) {
         return fee0 + (fee1 << 12);

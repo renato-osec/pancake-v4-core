@@ -52,7 +52,7 @@ contract BinPoolManager is IBinPoolManager, ProtocolFees, Extsload {
         _;
     }
 
-    function _getPool(PoolKey memory key) private view returns (BinPool.State storage) {
+    function _getPool(PoolKey calldata key) private view returns (BinPool.State storage) {
         return pools[key.toId()];
     }
 
@@ -133,7 +133,7 @@ contract BinPoolManager is IBinPoolManager, ProtocolFees, Extsload {
     }
 
     /// @inheritdoc IBinPoolManager
-    function swap(PoolKey memory key, bool swapForY, int128 amountSpecified, bytes calldata hookData)
+    function swap(PoolKey calldata key, bool swapForY, int128 amountSpecified, bytes calldata hookData)
         external
         override
         whenNotPaused
