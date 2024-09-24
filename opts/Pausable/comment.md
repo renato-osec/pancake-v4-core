@@ -1,7 +1,7 @@
 ### filename
 src/base/Pausable.sol
 
-### reason
+### summary
 
 changing \_paused to a u256 eliminates masking and shifting ops in the modifier whenNotPaused
 

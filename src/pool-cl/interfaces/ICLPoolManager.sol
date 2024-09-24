@@ -143,8 +143,8 @@ interface ICLPoolManager is IProtocolFees, IPoolManager, IExtsload {
 
     struct SwapParams {
         bool zeroForOne;
-        int256 amountSpecified;
         uint160 sqrtPriceLimitX96;
+        int256 amountSpecified;
     }
 
     /// @notice Swap against the given pool

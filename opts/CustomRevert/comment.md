@@ -1,6 +1,14 @@
+### filename
+
+./src/libraries/CustomRevert.sol
+
+### summary
+
 We can avoid loading the fmp and safely break the memory-safe guarantees by using 0x0 as we immediately and always revert
 
 see : https://osec.io/blog/2023-07-28-solidity-compilers-memory-safety
+
+### noted yul diff
 
 New:
 

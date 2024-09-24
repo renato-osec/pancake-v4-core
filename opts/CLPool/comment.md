@@ -2,15 +2,11 @@
 
 src/pool-cl/libraries/CLPool.sol
 
-
-
+### summary
 
 Allow for better struct packing
 
-Old :
-
-
-
+### noted sol diff
 
 New : 
 
