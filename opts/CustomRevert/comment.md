@@ -12,7 +12,7 @@ see : https://osec.io/blog/2023-07-28-solidity-compilers-memory-safety
 
 New:
 
-```
+```yul
 assembly ("memory-safe") {
     let size := returndatasize()
     // Encode selector, address, offset, size, data
@@ -30,7 +30,7 @@ assembly ("memory-safe") {
 
 Old:
 
-```
+```yul
 assembly ("memory-safe") {
     let size := returndatasize()
     let fmp := mload(0x40)

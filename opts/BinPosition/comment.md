@@ -10,6 +10,7 @@ Use scratch space by leveraging shifting and masking. Update tests in test/pool-
 
 New:
 
+```yul
 function calculatePositionKey(address owner, uint24 binId, bytes32 salt) internal pure returns (bytes32 key) {
     // dev same as `positionKey = keccak256(abi.encodePacked(binId, owner, salt))`
     // make salt, binId, owner to be tightly packed in memory
@@ -20,9 +21,11 @@ function calculatePositionKey(address owner, uint24 binId, bytes32 salt) interna
         key := keccak256(0x09, 55)
     }
 }
+```
 
 Old:
 
+```yul
 function calculatePositionKey(address owner, uint24 binId, bytes32 salt) internal pure returns (bytes32 key) {
     // dev same as `positionKey = keccak256(abi.encodePacked(owner, binId, salt))`
     // make salt, binId, owner to be tightly packed in memory
@@ -40,3 +43,4 @@ function calculatePositionKey(address owner, uint24 binId, bytes32 salt) interna
         mstore(fmp, 0) // fmp held owner
     }
 }
+```

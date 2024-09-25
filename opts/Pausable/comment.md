@@ -11,27 +11,26 @@ this increases gas for pausing and unpausing the contract, because a new hot slo
 
 ### noted yul diff
 
-- Before :
+Before :
 
-
-    ```
-    function fun_requireNotPaused() {
-        if (and(shr(160, sload(0x00)), 0xff)) {
-            mstore(0x00, 0xd93c066500000000000000000000000000000000000000000000000000000000)
-            revert(0x00, 4)
-        }
+```yul
+function fun_requireNotPaused() {
+    if (and(shr(160, sload(0x00)), 0xff)) {
+        mstore(0x00, 0xd93c066500000000000000000000000000000000000000000000000000000000)
+        revert(0x00, 4)
     }
-    ```
+}
+```
 
-- After :
+After :
 
-    ```
-    function fun_requireNotPaused()
+```yul
+function fun_requireNotPaused()
+{
+    if eq(sload(0x01), 0x01)
     {
-        if eq(sload(0x01), 0x01)
-        {
-            mstore(0, 0xd93c066500000000000000000000000000000000000000000000000000000000)
-            revert(0, 4)
-        }
+        mstore(0, 0xd93c066500000000000000000000000000000000000000000000000000000000)
+        revert(0, 4)
     }
-    ```
+}
+```

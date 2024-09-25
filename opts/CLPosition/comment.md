@@ -10,6 +10,7 @@ Use scratch space by leveraging shifting and masking. Update tests in test/pool-
 
 New:
 
+```yul
 function calculatePositionKey(address owner, int24 tickLower, int24 tickUpper, bytes32 salt)
     internal
     pure
@@ -25,9 +26,11 @@ function calculatePositionKey(address owner, int24 tickLower, int24 tickUpper, b
     }
 
 }
+```
 
 Old:
 
+```yul
 function calculatePositionKey(address owner, int24 tickLower, int24 tickUpper, bytes32 salt)
     internal
     pure
@@ -50,3 +53,4 @@ function calculatePositionKey(address owner, int24 tickLower, int24 tickUpper, b
         mstore(fmp, 0) // fmp held owner
     }
 }
+```
